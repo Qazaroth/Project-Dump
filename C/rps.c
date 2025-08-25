@@ -2,16 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-char* plrChoices[] = {"Rock", "Paper", "Scissors"};
+char* choices[] = {"Rock", "Paper", "Scissors"};
 
 char *getChoice(int choiceInt, int isPlayer) {
-    if (isPlayer == 1) {
-        return ((choiceInt > 0 && choiceInt < 4) ? plrChoices[choiceInt-1] : "What?");
-    } else if (isPlayer == 0) {
-        if (choiceInt < 33) return "Rock";
-        else if (choiceInt >= 33 && choiceInt < 67) return "Paper";
-        else return "Scissors";
-    }
+    if (isPlayer == 1) 
+        return ((choiceInt > 0 && choiceInt < 4) ? choices[choiceInt-1] : "What?"); 
+    else if (isPlayer == 0) 
+        return choices[choiceInt / 30];
 
     return "What?";
 }   
